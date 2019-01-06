@@ -8,8 +8,6 @@ it('renders without crashing', () => {
 });
 
 it('should update player score', () => {
-    const onScoreUpdate;
-    const playersAfterUpdate;
     const appComponent = shallow(<App />);
     const players = [
         {
@@ -19,11 +17,12 @@ it('should update player score', () => {
     ];
 
     appComponent.setState({ players });
-    onScoreUpdate = appComponent.find(PlayersList).prop('onScoreUpdate')
 
-    onScoreUpdate(0, 6);
+    const onScoreUpdate = appComponent.find(PlayersList).prop('onScoreUpdate')
 
-    playersAfterUpdate = appComponent.state().players;
+    onScoreUpdate(0, 1);
 
-    expect(playersAfterUpdate).toEqual(6);
+    const playersAfterUpdate = appComponent.state().players;
+
+    expect(playersAfterUpdate[0].score).toEqual(6);
 });

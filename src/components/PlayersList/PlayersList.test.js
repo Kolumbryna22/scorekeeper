@@ -61,8 +61,6 @@ it('checks remove player', () => {
     const onPlayerRemove = firstPlayer.prop('onPlayerRemove');
 
     onPlayerRemove(0);
-
-    const playersLeft = playerComponent.find(Player);
-
-    expect(playersLeft.length).toEqual(0);
+    
+    expect(mockedOnPlayerRemove).toBeCalledWith(0);
 });

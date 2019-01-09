@@ -1,15 +1,43 @@
 .Player {
-
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto 10px;
+    padding: 5px 15px;
+    list-style-type: none;
+    border-bottom: 1px solid black;
 }
 
 .Player__name {
-
-}
-
-.Player__score {
-
+    width: 150px;
+    text-align: left;
 }
 
 .Player__button {
-    
+    width: 20px;
+    text-align: center;
+}
+
+.Player__button,
+.Player__remove {
+    cursor: pointer;
+    border-radius: 4px;
+    transition-duration: 0.3s;
+}
+
+.Player__name,
+.Player__score,
+.Player__button,
+.Player__remove {
+    padding: 5px;
+}
+
+.Player__button:hover {
+    background-color: grey;
+    color: white;
+}
+
+.Player__remove:hover {
+    background-color: red;
+    color: white;
 }
